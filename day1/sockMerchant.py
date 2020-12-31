@@ -1,7 +1,8 @@
-# Complete the sockMerchant function below.
+#Sock Merchant
+
 def sockMerchant(n, ar):
     pairCount = 0;
-    l = []
+    l = set()
     
     for i in range(n):
         if ar[i] in l:
@@ -9,6 +10,6 @@ def sockMerchant(n, ar):
             l.remove(ar[i])
            
         else:
-            l.append(ar[i])
+            l.add(ar[i])
         
     return pairCount
