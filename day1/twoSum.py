@@ -1,17 +1,14 @@
-class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        elements = {}
+def twoSum(nums, target):
+    elements = {}
         
-        for index,number in enumerate(nums):
-            if (target - number) in elements:
-                return [index, elements[target-number]]
+    for i in range(len(nums)):
+        if target - nums[i] in elements:
+            return [i,elements[target-nums[i]]]
+        
+        elements[nums[i]] = i
             
-            elements[number] = index
-            
-        return None
+    return None
+                
+print(twoSum([2,7,11,15],9))
+
                 
