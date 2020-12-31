@@ -23,7 +23,7 @@ def calculate_sum(a,b):
     if carry:
         summ += str(carry)
 
-    return summ[::-1]
+    return int(summ[::-1])
 
  
-print(calculate_sum('-100','100'))
+print(calculate_sum('9999','9999999'))
