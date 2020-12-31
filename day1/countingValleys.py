@@ -1,3 +1,5 @@
+#Counting Valleys
+
 def countingValleys(steps, path):
     # Write your code here
     sea_level = 0
@@ -16,3 +18,5 @@ def countingValleys(steps, path):
                
             
     return valley
+
+print(countingValleys(8,'UDDDUDUU'))
