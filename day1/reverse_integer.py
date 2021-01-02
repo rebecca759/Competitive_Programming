@@ -1,26 +1,27 @@
-class Solution:
-    def reverse(self, x: int) -> int:
-        str_num = str(x)
-        num = ''
-        
-        if len(str_num) == 1:
-            return x
-        
-        for i in range(len(str_num)-1,-1,-1):
-            if str_num[i] == '-':
-                pass
-            else:
-                num += str_num[i]
-            
-        if len(num) > 10:
-            return 0
-        
-        if str_num[0] == '-':
-            if -int(num) > (-2**31):
-                return -int(num)
+def reverse(x):
+    res = 0
+    m = 0
+    
+    INT_MAX = 2 ** 31 - 1
+    INT_MIN = -2 ** 31
+    
+    while x:
+        if x < 0:
+            m = x % (- 10)
+            x = int(x / 10)
+            if (res < int(INT_MIN/10)) or (res == int(INT_MIN/10) and m < -8):
+                return 0
+            res = res * 10 + m
+          
         else:
-            if int(num) < (2**31)-1:
-                return int(num)
+            m = x % 10
+            x = x // 10
+            if (res > INT_MAX/10) or (res == INT_MAX / 10 and m > 7):
+                return 0
+            res = res * 10 + m
             
-        return 0
+
+    return res
+
+print(reverse(-123))
 
