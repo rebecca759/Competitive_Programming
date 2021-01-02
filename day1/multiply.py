@@ -25,7 +25,8 @@ def calculate_sum(a,b):
 
     return summ[::-1]
 
-def multiply(a,b):
+
+def multiply_positives(a,b):
     maxx = a if len(a) >= len(b) else b
     minn = a if len(a) < len(b) else b
 
@@ -55,9 +56,12 @@ def multiply(a,b):
 
             indMax -= 1
 
-        current_sum = current_sum[::-1]
+        if carry:
+            current_sum = str(carry) + current_sum[::-1]
 
-        
+        else:
+            current_sum = current_sum[::-1]
+
         total_sum = calculate_sum(current_sum+('0'*count),('0'*count)+total_sum)
     
         indMin -= 1
@@ -66,8 +70,26 @@ def multiply(a,b):
 
     return int(total_sum)
 
+def multiply(a,b):
+    if int(a) >= 0 and int(b) >= 0:
+        return multiply_positives(a,b)
 
-print(multiply('1235666','4124'))
+    elif (int(a) < 0) and (int(b) > 0):
+        a = str(abs(int(a)))
+        return -multiply_positives(a,b)
+        
+
+    elif (int(a) > 0) and (int(b) < 0):
+        b = str(abs(int(b)))
+        return -multiply_positives(a,b)
+
+    elif (int(a) < 0) and (int(b) < 0):
+        a = str(abs(int(a)))
+        b = str(abs(int(b)))
+
+        return multiply_positives(a,b)
+
+print(multiply('1000029364','999999999'))
             
 
             
