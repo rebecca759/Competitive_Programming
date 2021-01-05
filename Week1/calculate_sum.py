@@ -26,6 +26,7 @@ def calculate_sum(a,b):
     return int(summ[::-1])
 
  
+<<<<<<< HEAD:Week1/calculate_sum.py
 
 print(calculate_sum('9999','9999999'))
 
@@ -39,3 +40,6 @@ print(calculate_sum('9999','9999999'))
 
 
     
+=======
+print(calculate_sum('9999','9999999'))
+>>>>>>> 78ee5ff442cb929367d49dd533112532c2c16a46:day1/calculate_sum.py

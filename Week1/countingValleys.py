@@ -1,3 +1,5 @@
+#Counting Valleys
+
 def countingValleys(steps, path):
     sea_level = 0
     valley = 0
@@ -16,5 +18,8 @@ def countingValleys(steps, path):
             
     return valley
 
+<<<<<<< HEAD:Week1/countingValleys.py
 
+=======
+>>>>>>> 78ee5ff442cb929367d49dd533112532c2c16a46:day1/countingValleys.py
 print(countingValleys(8,'UDDDUDUU'))
