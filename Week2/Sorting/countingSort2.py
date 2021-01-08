@@ -21,9 +21,8 @@ def counting_sort2(array):
 
     for i in range(len(counter_array)):
         for _ in range(counter_array[i]):
-            if counter_array[i] > 0:
-                array[j] = i + min_num
-                j += 1
+            array[j] = i + min_num
+            j += 1
             
 
     return array
