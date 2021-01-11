@@ -1,8 +1,4 @@
 def sortColors(nums):
-    red_count = 0
-    white_count = 0
-    blue_count = 0
-
     left = 0
     right = len(nums)-1
     current = 0
