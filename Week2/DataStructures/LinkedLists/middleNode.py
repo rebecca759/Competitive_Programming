@@ -23,3 +23,15 @@ class Solution:
                 return current
             current = current.next
             index += 1
+
+#Another Approach
+class Solution:
+    def middleNode(self, head: ListNode) -> ListNode:
+        slow = head
+        fast = head
+        
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            
+        return slow
