@@ -1,38 +1,37 @@
-# Definition for singly-linked list.
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
-    def _print(self):
-        current = self
-
-        while current:
-            print(current.val,end='')
-            current = current.next
-
-        print()
+class Solution:
+    def __init__(self):
+        self.result = None
         
+    def reverseList(self, head: ListNode) -> ListNode:
+        if not head:
+            return 
+        
+        if not head.next:
+            self.result = head
+            return self.result
+            
+        res = self.reverseList(head.next)
+        q = head.next
+        q.next = head
+        head.next = None
+        
+        return self.result
 
-def reverseList(head: ListNode) -> ListNode:
-    prev = None
-    current = head
-    
-    while current:
-        temp = current.next
-        current.next = prev
-        prev = current
-        current = temp
+#Recursively
+class Solution:
+    def reverseList(self, head: ListNode) -> ListNode:
+        if not head:
+            return 
+        
+        if not head.next:
+            return head
 
-    return prev._print()
+        #keep adding to call stack until last element
+        result = self.reverseList(head.next)
+        #At this point we're going upwards in the call stack b/c we've finished last call
+        #reverse
+        head.next.next = head
+        #break the cycle
+        head.next = None
 
-head = ListNode(1)
-head.next = ListNode(2)
-head.next.next = ListNode(3)
-head.next.next.next = ListNode(4)
-
-head._print()
-
-reverseList(head)
-
-
+        return result
