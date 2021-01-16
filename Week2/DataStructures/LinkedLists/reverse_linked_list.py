@@ -1,21 +1,17 @@
+#Iteratively
 class Solution:
-    def __init__(self):
-        self.result = None
-        
     def reverseList(self, head: ListNode) -> ListNode:
-        if not head:
-            return 
         
-        if not head.next:
-            self.result = head
-            return self.result
-            
-        res = self.reverseList(head.next)
-        q = head.next
-        q.next = head
-        head.next = None
+        prev = None
+        current = head
         
-        return self.result
+        while current:
+            temp = current.next
+            current.next = prev
+            prev = current
+            current = temp
+   
+        return prev
 
 #Recursively
 class Solution:
