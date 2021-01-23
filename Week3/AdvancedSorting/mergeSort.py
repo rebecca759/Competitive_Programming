@@ -7,15 +7,13 @@ def mergeSort(arr,start,end,r):
         p2 = mergeSort(arr,mid + 1,end,r)
 
         #merge the two halves
-        left = p1
-        right = p2
         
-        r = mergeLists([left],r)
-        r = mergeLists([right],r)
-        
-        print(r)
+        r = mergeLists(p1,r)
+        r = mergeLists(p2,r)
 
-    return arr[start]
+        return r
+        
+    return [arr[start]]
 
 def mergeLists(l1,l2):
     i = j = 0
