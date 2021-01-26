@@ -10,21 +10,20 @@ class Solution:
             root = TreeNode(val)
             
         else:
-            self.insert(root,val)
-            
+            if val < root.val:
+                if not root.left:
+                    root.left = TreeNode(val)
+
+                else:
+                    self.insertIntoBST(root.left,val)
+
+            elif val > root.val:
+                if not root.right:
+                    root.right = TreeNode(val)
+
+                else:
+                    self.insertIntoBST(root.right,val)
+                    
         return root
-            
-    def insert(self,root,val):
-        if val < root.val:
-            if not root.left:
-                root.left = TreeNode(val)
-            
-            else:
-                self.insert(root.left,val)
-                
-        elif val > root.val:
-            if not root.right:
-                root.right = TreeNode(val)
-                
-            else:
-                self.insert(root.right,val)
+
+
