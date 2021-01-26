@@ -20,7 +20,7 @@ class Solution:
         elif (not left and right) or (not right and left) or (right and left and right.val != left.val):
             return False
         
-        if (left and right and left.val == right.val):
+        elif (left and right and left.val == right.val):
             val1 = self.symmetric(left.left,right.right)
             val2 = self.symmetric(left.right,right.left)
             
