@@ -1,7 +1,7 @@
 import heapq
 
 class Solution:
-    def lastStoneWeight(self, stones: List[int]) -> int:
+    def lastStoneWeight(self, stones) -> int:
         
         #use max-heap since we're asked two largest elements
         heap = []
