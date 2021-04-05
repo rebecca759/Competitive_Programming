@@ -3,6 +3,8 @@ class Solution:
     def countPrimes(self, n: int) -> int:
         if n == 1 or n == 0:
             return 0
+
+        #Sieve of Eratosthenes
         
         primes = [True]*n
         

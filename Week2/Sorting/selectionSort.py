@@ -10,8 +10,6 @@ def selectionSort(array):
         if swap:
             array[minIndex], array[i] = array[i], array[minIndex]
 
-        print(array)
-
     return array
 
 
