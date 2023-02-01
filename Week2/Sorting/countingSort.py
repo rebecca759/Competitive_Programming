@@ -4,12 +4,8 @@ def countingSort(array):
     if array == []:
         return
     
-    max_num = array[0]
+    max_num = max(array)
     j = 0
-
-    for i in range(1,len(array)):
-        if array[i] > max_num:
-            max_num = array[i]
 
     counter_array = (max_num+1) * [0]
     
