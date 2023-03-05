@@ -1,3 +1,3 @@
 # Competitive_Programming
 
-Solutions for excercises on competitive programming.
+Solutions for problems on competitive programming, mostly from Leetcode.
